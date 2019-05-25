@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './widgets_page.dart';
+import './layout_page.dart';
+import './list_item.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,24 +25,17 @@ class HomePage extends StatelessWidget {
         title: Text("Top box"),
       ),
       body: ListView(
-        children: <Widget>[],
+        children: <Widget>[
+          ListItem(
+            title: "Widgets",
+            page: WidgetsPage(),
+          ),
+          ListItem(
+            title: "Layout",
+            page: LayoutPage(),
+          )
+        ],
       ),
-    );
-  }
-}
-
-class ListItem extends StatelessWidget {
-  final String title;
-  final Widget page;
-  ListItem({this.title, this.page});
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => page));
-      },
     );
   }
 }

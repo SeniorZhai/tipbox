@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './widgets_page.dart';
 import './layout_page.dart';
 import './list_item.dart';
+import './gesture_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +34,10 @@ class HomePage extends StatelessWidget {
           ListItem(
             title: "Layout",
             page: LayoutPage(),
+          ),
+          ListItem(
+            title: "Gesture",
+            page: GesturePage(),
           )
         ],
       ),
